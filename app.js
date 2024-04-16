@@ -1,3 +1,6 @@
+let playerScore = 0
+let computerScore = 0
+
 
 //function randomly chooses from rock, paper, or scissors and returns the result as a string
 function getComputerChoice() {
@@ -26,18 +29,35 @@ function playRound(){
     //win
     if((playerSelection == 'rock' && computerSelection == 'scissors') || (playerSelection == 'paper' && computerSelection == 'rock') || (playerSelection == 'scissors' && computerSelection == 'paper')){
         result = `You Win! ${playerSelection} beats ${computerSelection}`
-        console.log(playerSelection, computerSelection)
+        playerScore++
     }
     //lose
     else if(playerSelection !== computerSelection){
         result = `You Lose! ${computerSelection} beats ${playerSelection}`
-        console.log(playerSelection, computerSelection)
+        computerScore++
     }
     //tie
     else{
-        result = "You Tie!"
-        console.log(playerSelection, computerSelection)        
+        result = "You Tie!"       
     }
     return result
 }
+
+//function plays 5 games and returns the results
+function playGame(){
+    playerScore = 0
+    computerScore = 0
+    for(let i = 0; i < 5; i++){
+        playRound()
+    }
+    if(playerScore > computerScore){
+        console.log(`You Win! you won: ${playerScore} and computer won: ${computerScore} times`)
+    }
+    else if(computerScore > playerScore){
+        console.log(`You Lose! you won: ${playerScore} and computer won: ${computerScore} times`)
+    }
+    else{
+        console.log(`You tie! you won: ${playerScore} and computer won: ${computerScore} times`)
+    }
+};
 
