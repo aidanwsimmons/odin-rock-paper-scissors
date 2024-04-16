@@ -1,2 +1,2 @@
 # odin-rock-paper-scissors
-# odin-rock-paper-scissors
+play rock paper scissors in console
