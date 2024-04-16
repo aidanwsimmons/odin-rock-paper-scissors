@@ -13,16 +13,19 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection){
+    computerSelection = getComputerChoice()
+    playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase()
     //win
     if((playerSelection = 'rock' && computerSelection == 'scissors') || (playerSelection == 'paper' && computerSelection == 'rock') || (playerSelection == 'scissors' && computerSelection == 'paper')){
-        return `You Win! ${playerSelection.capitalize()} beats ${computerSelection}`
+        let result = `You Win! ${playerSelection.capitalize()} beats ${computerSelection}`
     }
     //lose
     else if(playerSelection !== computerSelection){
-        return `You Lose! ${computerSelection.capitalize()} beats ${playerSelection.capitalize()}`
+        let result = `You Lose! ${computerSelection.capitalize()} beats ${playerSelection.capitalize()}`
     }
     //tie
     else{
-        return "You Tie!"
+        let result = "You Tie!"
     }
+    return result
 }
