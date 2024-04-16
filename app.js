@@ -1,5 +1,7 @@
 let playerScore = 0
 let computerScore = 0
+let roundResult = ''
+let gameResult = ''
 
 
 //function randomly chooses from rock, paper, or scissors and returns the result as a string
@@ -25,22 +27,21 @@ function playRound(){
     while(!validChoices.includes(playerSelection)){
         playerSelection = prompt("Enter 'rock', 'paper' or 'scissors':").toLowerCase()
     }
-    let result = ''
     //win
     if((playerSelection == 'rock' && computerSelection == 'scissors') || (playerSelection == 'paper' && computerSelection == 'rock') || (playerSelection == 'scissors' && computerSelection == 'paper')){
-        result = `You Win! ${playerSelection} beats ${computerSelection}`
+        roundResult = `You Win! ${playerSelection} beats ${computerSelection}`
         playerScore++
     }
     //lose
     else if(playerSelection !== computerSelection){
-        result = `You Lose! ${computerSelection} beats ${playerSelection}`
+        roundResult = `You Lose! ${computerSelection} beats ${playerSelection}`
         computerScore++
     }
     //tie
     else{
-        result = "You Tie!"       
+        roundResult = "You Tie!"       
     }
-    return result
+    return roundResult
 }
 
 //function plays 5 games and returns the results
@@ -49,15 +50,17 @@ function playGame(){
     computerScore = 0
     for(let i = 0; i < 5; i++){
         playRound()
+        console.log(roundResult)
     }
     if(playerScore > computerScore){
-        console.log(`You Win! you won: ${playerScore} and computer won: ${computerScore} times`)
+        gameResult = `You Win! you won: ${playerScore} and computer won: ${computerScore} times`
     }
     else if(computerScore > playerScore){
-        console.log(`You Lose! you won: ${playerScore} and computer won: ${computerScore} times`)
+        gameResult = `You Lose! you won: ${playerScore} and computer won: ${computerScore} times`
     }
     else{
-        console.log(`You tie! you won: ${playerScore} and computer won: ${computerScore} times`)
+        gameResult = `You tie! you won: ${playerScore} and computer won: ${computerScore} times`
     }
+    return gameResult
 };
 
