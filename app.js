@@ -1,6 +1,7 @@
 let playerScore = 0
 let computerScore = 0
 let roundResult = ''
+let roundDescription = ''
 let gameResult = ''
 let playerSelection 
 let computerSelection
@@ -41,17 +42,20 @@ function playRound(){
     // }
     //win
     if((playerSelection == 'rock' && computerSelection == 'scissors') || (playerSelection == 'paper' && computerSelection == 'rock') || (playerSelection == 'scissors' && computerSelection == 'paper')){
-        roundResult = `You Win! ${playerSelection} beats ${computerSelection}`
+        roundResult = `You Win!`
+        roundDescription = `${playerSelection} beats ${computerSelection}`
         playerScore++
     }
     //lose
     else if(playerSelection !== computerSelection){
-        roundResult = `You Lose! ${computerSelection} beats ${playerSelection}`
+        roundResult = `You Lose!`
+        roundDescription = `${computerSelection} beats ${playerSelection}`
         computerScore++
     }
     //tie
     else{
-        roundResult = "You Tie!"       
+        roundResult = "You Tie!"
+        roundDescription = `${computerSelection} ties with ${playerSelection}`       
     }
     return roundResult
 }
