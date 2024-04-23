@@ -89,7 +89,20 @@ footer > img {
 /* Styling for the result container */
 #resultContainer {
     background-color: white;
-    padding: 20px;
+    padding: 150px;
     border-radius: 10px;
     text-align: center;
+}
+
+#resultContainer > h2 {
+    color: black;
+    font-size: 42px;
+}
+
+#resultContainer > button {
+    width: 200px;
+    height: 50px;
+    background-color: darkgray;
+    font-size: 30px;
+    cursor: pointer;
 }
