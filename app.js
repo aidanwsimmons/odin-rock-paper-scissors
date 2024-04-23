@@ -15,6 +15,8 @@ const playerDisplay = document.querySelector('.player-choice')
 const cpuDisplay = document.querySelector('.cpu-choice')
 const playerScoreDisplay = document.querySelector('.player-score')
 const cpuScoreDisplay = document.querySelector('.cpu-score')
+const resultDisplay = document.querySelector('.resultDisplay')
+const playAgainBtn = document.querySelector('.playAgain')
 
 //function randomly chooses from rock, paper, or scissors and returns the result as a string
 function getComputerChoice() {
@@ -85,10 +87,30 @@ scissorsBtn.addEventListener('click', () => {
 function gameOver() {
     const overlay = document.getElementById('resultOverlay');
     overlay.style.display = 'flex';
+    if(playerScore == 5){
+        resultDisplay.innerText = 'YOU WON'
+    }
+    else if(computerScore == 5){
+        resultDisplay.innerText = 'YOU LOSE'
+    }
 }
 
-function playAgain() {
-    var overlay = document.getElementById('resultOverlay');
+// function playAgain() {
+//     const overlay = document.getElementById('resultOverlay');
+//     overlay.style.display = 'none';
+//     playerScore = 0
+//     computerScore = 0
+//     playerScoreDisplay.innerText = playerScore
+//     cpuScoreDisplay.innerText = computerScore
+//     playerDisplay.innerText = '?'
+//     cpuDisplay.innerText = '?'
+//     mainText.innerText = 'Choose your weapon'
+//     secondaryText.innerText = 'First to 5 points wins!'
+
+// }
+
+playAgainBtn.addEventListener('click', () => {
+    const overlay = document.getElementById('resultOverlay');
     overlay.style.display = 'none';
     playerScore = 0
     computerScore = 0
@@ -98,8 +120,7 @@ function playAgain() {
     cpuDisplay.innerText = '?'
     mainText.innerText = 'Choose your weapon'
     secondaryText.innerText = 'First to 5 points wins!'
-
-}
+})
 
 //function plays 5 games and returns the results
 // function playGame(){
