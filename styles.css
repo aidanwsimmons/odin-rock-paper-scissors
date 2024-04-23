@@ -15,3 +15,25 @@ header {
     word-spacing: 50px;
     font-size: 36px;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: darkgrey;
+    height: 800px;
+    gap: 50px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+footer > img {
+    width: 24px;
+    height: auto;
+}
