@@ -7,7 +7,7 @@ body {
 header {
     background-color: black;
     height: 150px;
-    color: rgb(140, 191, 131);
+    color: rgb(209, 185, 3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,9 +21,42 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: darkgrey;
+    background-color: rgb(47, 47, 47);
     height: 800px;
     gap: 50px;
+    color: rgb(220, 218, 218);
+}
+
+.text-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.player-cards {
+    display: flex;
+    gap: 100px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.choice-buttons {
+    display: flex;
+    gap: 30px;
+}
+
+button {
+    width: 140px;
+    height: 40px;
+    font-size: 22px;
 }
 
 footer {
@@ -31,9 +64,12 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 12px;
+    background-color: rgb(47, 47, 47);
+    color: white;
 }
 
 footer > img {
     width: 24px;
     height: auto;
+    border-radius: 50%;
 }
