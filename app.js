@@ -35,13 +35,7 @@ function getComputerChoice() {
 
 //function plays a round of rock paper scissors and returns a string indicating the results
 function playRound(){
-    // let computerSelection = getComputerChoice()
     computerSelection = getComputerChoice()
-    // let playerSelection = prompt("Enter 'rock', 'paper' or 'scissors':").toLowerCase()
-    // const validChoices = ['rock', 'paper', 'scissors']
-    // while(!validChoices.includes(playerSelection)){
-    //     playerSelection = prompt("Enter 'rock', 'paper' or 'scissors':").toLowerCase()
-    // }
     //win
     if((playerSelection == 'rock' && computerSelection == 'scissors') || (playerSelection == 'paper' && computerSelection == 'rock') || (playerSelection == 'scissors' && computerSelection == 'paper')){
         roundResult = `You Win!`
@@ -84,6 +78,7 @@ scissorsBtn.addEventListener('click', () => {
     playRound()
 })
 
+//funtion shows results overlay and updates with results
 function gameOver() {
     const overlay = document.getElementById('resultOverlay');
     overlay.style.display = 'flex';
@@ -95,20 +90,7 @@ function gameOver() {
     }
 }
 
-// function playAgain() {
-//     const overlay = document.getElementById('resultOverlay');
-//     overlay.style.display = 'none';
-//     playerScore = 0
-//     computerScore = 0
-//     playerScoreDisplay.innerText = playerScore
-//     cpuScoreDisplay.innerText = computerScore
-//     playerDisplay.innerText = '?'
-//     cpuDisplay.innerText = '?'
-//     mainText.innerText = 'Choose your weapon'
-//     secondaryText.innerText = 'First to 5 points wins!'
-
-// }
-
+//function resets game and hides overlay
 playAgainBtn.addEventListener('click', () => {
     const overlay = document.getElementById('resultOverlay');
     overlay.style.display = 'none';
@@ -121,24 +103,4 @@ playAgainBtn.addEventListener('click', () => {
     mainText.innerText = 'Choose your weapon'
     secondaryText.innerText = 'First to 5 points wins!'
 })
-
-//function plays 5 games and returns the results
-// function playGame(){
-//     playerScore = 0
-//     computerScore = 0
-//     for(let i = 0; i < 5; i++){
-//         playRound()
-//         console.log(roundResult)
-//     }
-//     if(playerScore > computerScore){
-//         gameResult = `You Win! you won: ${playerScore} and computer won: ${computerScore} times`
-//     }
-//     else if(computerScore > playerScore){
-//         gameResult = `You Lose! you won: ${playerScore} and computer won: ${computerScore} times`
-//     }
-//     else{
-//         gameResult = `You tie! you won: ${playerScore} and computer won: ${computerScore} times`
-//     }
-//     return gameResult
-// };
 
