@@ -3,6 +3,17 @@ let computerScore = 0
 let roundResult = ''
 let gameResult = ''
 
+const rockBtn = document.querySelector('.rock')
+const paperBtn = document.querySelector('.paper')
+const scissorsBtn = document.querySelector('.scissors')
+const mainText = document.querySelector('h2')
+const secondaryText = document.querySelector('h3')
+const playerDisplay = document.querySelector('.player-choice')
+const cpuDisplay = document.querySelector('.cpu-choice')
+const playerScoreDisplay = document.querySelector('.player-score')
+const cpuScoreDisplay = document.querySelector('.cpu-score')
+
+
 
 //function randomly chooses from rock, paper, or scissors and returns the result as a string
 function getComputerChoice() {
