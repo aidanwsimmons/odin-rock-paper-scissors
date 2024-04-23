@@ -57,7 +57,16 @@ function playRound(){
         roundResult = "You Tie!"
         roundDescription = `${computerSelection} ties with ${playerSelection}`       
     }
-    return roundResult
+    mainText.innerText = roundResult
+    secondaryText.innerText = roundDescription
+    playerDisplay.innerText = playerSelection.toUpperCase()
+    cpuDisplay.innerText = computerSelection.toUpperCase()
+    playerScoreDisplay.innerText = playerScore
+    cpuScoreDisplay.innerText = computerScore
+
+    if(playerScore == 5 || computerScore == 5){
+        gameOver()
+    }
 }
 
 rockBtn.addEventListener('click', () => {
@@ -72,6 +81,25 @@ scissorsBtn.addEventListener('click', () => {
     playerSelection = 'scissors'
     playRound()
 })
+
+function gameOver() {
+    const overlay = document.getElementById('resultOverlay');
+    overlay.style.display = 'flex';
+}
+
+function playAgain() {
+    var overlay = document.getElementById('resultOverlay');
+    overlay.style.display = 'none';
+    playerScore = 0
+    computerScore = 0
+    playerScoreDisplay.innerText = playerScore
+    cpuScoreDisplay.innerText = computerScore
+    playerDisplay.innerText = '?'
+    cpuDisplay.innerText = '?'
+    mainText.innerText = 'Choose your weapon'
+    secondaryText.innerText = 'First to 5 points wins!'
+
+}
 
 //function plays 5 games and returns the results
 // function playGame(){
