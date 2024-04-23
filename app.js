@@ -45,22 +45,22 @@ function playRound(){
 }
 
 //function plays 5 games and returns the results
-function playGame(){
-    playerScore = 0
-    computerScore = 0
-    for(let i = 0; i < 5; i++){
-        playRound()
-        console.log(roundResult)
-    }
-    if(playerScore > computerScore){
-        gameResult = `You Win! you won: ${playerScore} and computer won: ${computerScore} times`
-    }
-    else if(computerScore > playerScore){
-        gameResult = `You Lose! you won: ${playerScore} and computer won: ${computerScore} times`
-    }
-    else{
-        gameResult = `You tie! you won: ${playerScore} and computer won: ${computerScore} times`
-    }
-    return gameResult
-};
+// function playGame(){
+//     playerScore = 0
+//     computerScore = 0
+//     for(let i = 0; i < 5; i++){
+//         playRound()
+//         console.log(roundResult)
+//     }
+//     if(playerScore > computerScore){
+//         gameResult = `You Win! you won: ${playerScore} and computer won: ${computerScore} times`
+//     }
+//     else if(computerScore > playerScore){
+//         gameResult = `You Lose! you won: ${playerScore} and computer won: ${computerScore} times`
+//     }
+//     else{
+//         gameResult = `You tie! you won: ${playerScore} and computer won: ${computerScore} times`
+//     }
+//     return gameResult
+// };
 
