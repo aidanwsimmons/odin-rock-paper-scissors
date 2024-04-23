@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+header {
+    background-color: black;
+    height: 150px;
+    color: rgb(140, 191, 131);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    word-spacing: 50px;
+    font-size: 36px;
+}
