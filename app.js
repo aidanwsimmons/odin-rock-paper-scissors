@@ -2,6 +2,8 @@ let playerScore = 0
 let computerScore = 0
 let roundResult = ''
 let gameResult = ''
+let playerSelection 
+let computerSelection
 
 const rockBtn = document.querySelector('.rock')
 const paperBtn = document.querySelector('.paper')
@@ -12,8 +14,6 @@ const playerDisplay = document.querySelector('.player-choice')
 const cpuDisplay = document.querySelector('.cpu-choice')
 const playerScoreDisplay = document.querySelector('.player-score')
 const cpuScoreDisplay = document.querySelector('.cpu-score')
-
-
 
 //function randomly chooses from rock, paper, or scissors and returns the result as a string
 function getComputerChoice() {
@@ -32,12 +32,13 @@ function getComputerChoice() {
 
 //function plays a round of rock paper scissors and returns a string indicating the results
 function playRound(){
-    let computerSelection = getComputerChoice()
-    let playerSelection = prompt("Enter 'rock', 'paper' or 'scissors':").toLowerCase()
-    const validChoices = ['rock', 'paper', 'scissors']
-    while(!validChoices.includes(playerSelection)){
-        playerSelection = prompt("Enter 'rock', 'paper' or 'scissors':").toLowerCase()
-    }
+    // let computerSelection = getComputerChoice()
+    computerSelection = getComputerChoice()
+    // let playerSelection = prompt("Enter 'rock', 'paper' or 'scissors':").toLowerCase()
+    // const validChoices = ['rock', 'paper', 'scissors']
+    // while(!validChoices.includes(playerSelection)){
+    //     playerSelection = prompt("Enter 'rock', 'paper' or 'scissors':").toLowerCase()
+    // }
     //win
     if((playerSelection == 'rock' && computerSelection == 'scissors') || (playerSelection == 'paper' && computerSelection == 'rock') || (playerSelection == 'scissors' && computerSelection == 'paper')){
         roundResult = `You Win! ${playerSelection} beats ${computerSelection}`
@@ -54,6 +55,19 @@ function playRound(){
     }
     return roundResult
 }
+
+rockBtn.addEventListener('click', () => {
+    playerSelection = 'rock'
+    playRound()
+})
+paperBtn.addEventListener('click', () => {
+    playerSelection = 'paper'
+    playRound()
+})
+scissorsBtn.addEventListener('click', () => {
+    playerSelection = 'scissors'
+    playRound()
+})
 
 //function plays 5 games and returns the results
 // function playGame(){
